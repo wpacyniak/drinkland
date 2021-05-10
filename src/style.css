@@ -1,0 +1,21 @@
+body {
+  background-color: #34a0a4;
+  font-family: "Duru Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  font-size: 17px;
+  align-content: center;
+  margin-left: 40%;
+  margin-top: 3%;
+}
+
+.logoTitle {
+  color: white;
+}
+
+.imgLogo {
+  width: 64px;
+  height: 64px;
+}
