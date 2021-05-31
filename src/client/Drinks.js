@@ -1,9 +1,20 @@
 import React from "react";
+import { Link } from "@reach/router";
 
-const Drinks = () => {
+const Drinks = ({ drinks }) => {
   return (
     <div className="Drinks">
-      <h1>Lista mmm</h1>
+      {drinks === null ? (
+        <h1>No Drinks 😥</h1>
+      ) : (
+        drinks.map((drink) => {
+          return (
+            <Link to={`/drink/${id}`}>
+              <div> {drink.name} </div>
+            </Link>
+          );
+        })
+      )}
     </div>
   );
 };

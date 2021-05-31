@@ -18,3 +18,13 @@ header {
   align-items: center;
   margin-top: 50px;
 }
+
+.Drinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+  color: #fff;
+  font-weight: 200;
+}
