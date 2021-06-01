@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Router } from "@reach/router";
 import logo from "./img/drink.png";
 import Drinks from "./Drinks";
+import Drink from "./Drink";
 import AddDrink from "./AddDrink";
 import AddIngredient from "./AddIngredient";
 
@@ -17,7 +18,9 @@ const App = () => {
         </header>
         <AddDrink />
         <AddIngredient />
-        <Drinks />
+        <Router>
+          <Drinks path="/" />
+        </Router>
       </div>
     </React.StrictMode>
   );

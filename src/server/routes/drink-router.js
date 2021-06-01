@@ -38,10 +38,9 @@ drinkRoutes.route("/:id").get(function (req, res) {
     .find({})
     .toArray(function (err, result) {
       if (err) throw err;
-      let drink = result.find((o) => o._id == req.query.book_id);
-      res.render(path.join(__dirname + "/public/book_page.ejs"), {
-        current_book: book,
-      });
+      let drink = result.find((o) => o._id == req.query.id);
+      console.log("Got drink");
+      res.json(drink);
     });
 });
 
