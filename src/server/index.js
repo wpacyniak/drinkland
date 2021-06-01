@@ -3,8 +3,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 
-const db = require("./db/conn");
-
 const app = express();
 
 app.use(express.static("dist"));
@@ -14,10 +12,7 @@ app.use(cors());
 
 //do routingu
 const drinkRouter = require("./routes/drink-router");
-
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
-});
+const db = require("./db/conn");
 
 app.listen(3000, () => {
   db.connectToServer(function (err) {

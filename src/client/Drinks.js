@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "@reach/router";
+import axios from "axios";
 
-const Drinks = ({ drinks }) => {
+const Drinks = () => {
+  const [drinks, setDrinks] = useState([]);
+
+  const getDrinks = async () => {
+    const res = await axios.get("/drinks");
+    setDrinks(res.data);
+  };
+
   return (
     <div className="Drinks">
       {drinks === null ? (
