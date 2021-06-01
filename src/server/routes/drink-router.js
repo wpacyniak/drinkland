@@ -12,6 +12,7 @@ drinkRoutes.route("/drinks").get(function (req, res) {
     .find({})
     .toArray(function (err, result) {
       if (err) throw err;
+      console.log("Get list of drinks");
       res.json(result);
     });
 });

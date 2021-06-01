@@ -5,11 +5,9 @@ const AddDrink = () => {
   const [drinkName, setDrinkName] = useState([]);
 
   function submitAdding(e) {
-    const item = {
-      drinkName: { drinkName },
-    };
+    const itemDrink = { drinkName };
     axios
-      .post("http://localhost:3000/drinks/add", item)
+      .post("http://localhost:3000/drinks/add", itemDrink)
       .then((res) => console.log(res.data));
 
     setDrinkName([]);

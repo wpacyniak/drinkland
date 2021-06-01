@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 
+const db = require("./db/conn");
+
 const app = express();
 
 app.use(express.static("dist"));
@@ -11,8 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 //do routingu
-const drinkRouter = require("./routes/drink-router");
-const db = require("./db/conn");
+app.use(require("./routes/drink-router"));
 
 app.listen(3000, () => {
   db.connectToServer(function (err) {

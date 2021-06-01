@@ -5,6 +5,8 @@ const AddIngredient = () => {
   const [amount, setAmount] = useState([]);
   const [color, setColor] = useState([]);
 
+  //TODO:: musi przyjmować id drinka jako propos i potem to tez wysyłać w funkcji axios
+
   return (
     <div className="AddIngredient">
       <h3>Dodaj składnik!</h3>

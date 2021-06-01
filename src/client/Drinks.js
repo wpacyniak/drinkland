@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "@reach/router";
 import axios from "axios";
 
 const Drinks = () => {
   const [drinks, setDrinks] = useState([]);
 
-  const getDrinks = async () => {
-    const res = await axios.get("/drinks");
-    setDrinks(res.data);
-  };
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/drinks/")
+      .then((response) => {
+        setDrinks(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, [setDrinks]);
 
   return (
     <div className="Drinks">
@@ -16,11 +22,7 @@ const Drinks = () => {
         <h1>No Drinks 😥</h1>
       ) : (
         drinks.map((drink) => {
-          return (
-            <Link to={`/drink/${id}`}>
-              <div> {drink.name} </div>
-            </Link>
-          );
+          return <div key={drink._id}> {drink.drinkName} </div>;
         })
       )}
     </div>
