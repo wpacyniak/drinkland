@@ -4,18 +4,18 @@ import axios from "axios";
 const Drink = (id) => {
   const [drink, setDrink] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/drinks/" + props.id)
-      .then((response) => {
-        setDrink(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:3000/drinks/" + props.id)
+  //     .then((response) => {
+  //       setDrink(response.data);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }, []);
 
-  return <div></div>;
+  return <div>elo</div>;
 };
 
 export default Drink;

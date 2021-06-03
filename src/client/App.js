@@ -3,7 +3,6 @@ import { Link, Router } from "@reach/router";
 import logo from "./img/drink.png";
 import Drinks from "./Drinks";
 import Drink from "./Drink";
-import AddDrink from "./AddDrink";
 import AddIngredient from "./AddIngredient";
 
 const App = () => {
@@ -11,15 +10,14 @@ const App = () => {
     <React.StrictMode>
       <div>
         <header>
-          <Link to="/" className="logo">
+          <Link to="/details" className="logo">
             <img src={logo} alt="Logo" />
             Drinkland
           </Link>
         </header>
-        <AddDrink />
-        <AddIngredient />
         <Router>
           <Drinks path="/" />
+          <Drink path="/details" />
         </Router>
       </div>
     </React.StrictMode>

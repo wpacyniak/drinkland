@@ -60,21 +60,21 @@ drinkRoutes.route("/:id/update").post(function (req, res) {
   });
 });
 
-// This section will help you delete a drink
+// Delete a drink
 drinkRoutes.route("/:id").delete((req, res) => {
-  let db_connect = dbo.getDb("drinkland");
-  var myquery = { id: req.body.id };
-  db_connect.collection("Drinks").deleteOne(myquery, function (err, obj) {
+  let db_connect = db.getDb("drinkland");
+  var myQuery = { id: req.body.id };
+  db_connect.collection("Drinks").deleteOne(myQuery, function (err, obj) {
     if (err) throw err;
     console.log("Drink deleted");
   });
 });
 
-// This section will help you delete a ingredient
+// Delete a ingredient
 drinkRoutes.route("/:id").delete((req, res) => {
-  let db_connect = dbo.getDb("drinkland");
-  var myquery = { id: req.body.id };
-  db_connect.collection("Items").deleteOne(myquery, function (err, obj) {
+  let db_connect = db.getDb("drinkland");
+  var myQuery = { id: req.body.id };
+  db_connect.collection("Items").deleteOne(myQuery, function (err, obj) {
     if (err) throw err;
     console.log("Ingredient deleted");
   });
