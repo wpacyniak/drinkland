@@ -1,6 +1,7 @@
 body {
   background-color: #34a0a4;
   font-family: "Duru Sans", sans-serif;
+  margin-bottom: 70px;
 }
 
 .logo {
@@ -224,12 +225,12 @@ td {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   height: 40px;
-  background-color: rgba(50, 50, 70, 0.2);
+  background-color: #257a7d;
   color: #fff;
   padding: 10px;
   text-align: center;
