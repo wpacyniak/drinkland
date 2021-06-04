@@ -50,7 +50,9 @@ const Drinks = () => {
               <div className="drinkBox" key={drink._id}>
                 <div className="drinkItem">
                   <span className="indexNumber">{index + 1}. </span>
-                  <span>{drink.drinkName} </span>
+                  <Link to={`/details/${drink._id}`} className="linkItem">
+                    <span>{drink.drinkName} </span>
+                  </Link>
                 </div>
                 <div className="deleteBox">
                   <button
