@@ -5,11 +5,10 @@ const Search = ({ searchQuery, setSearchQuery }) => {
     <div className="search-box">
       <input
         value={searchQuery}
-        onInput={(e) => setSearchQuery(e.target.value)}
+        onChange={(e) => setSearchQuery(e.target.value)}
         type="text"
         className="search-bar"
         placeholder="Szukaj..."
-        name="s"
       />
     </div>
   );

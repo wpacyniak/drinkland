@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "@reach/router";
 import axios from "axios";
+import Search from "./Search";
 
 const Drinks = () => {
   const [drinks, setDrinks] = useState([]);
   const [loading, setLoading] = useState(0);
   const [drinkName, setDrinkName] = useState([]);
   const [showForm, setShowForm] = useState(false);
+
+  const { search } = window.location;
+  const query = new URLSearchParams(search);
+  const [searchQuery, setSearchQuery] = useState(query || "");
+  const filteredPosts = filterPosts(drinks, searchQuery);
 
   useEffect(() => {
     axios
@@ -36,16 +42,28 @@ const Drinks = () => {
     });
   }
 
+  function filterPosts(posts, query) {
+    if (!query) {
+      return posts;
+    }
+
+    return posts.filter((post) => {
+      const postName = post.drinkName.toLowerCase();
+      return postName.includes(query);
+    });
+  }
+
   return (
     <div className="Drinks">
+      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <div className="drinksTitle">
         <h2>Wszystkie drinki: </h2>
       </div>
       <div>
-        {drinks.length == 0 ? (
+        {filteredPosts.length == 0 ? (
           <h3>No Drinks 😥</h3>
         ) : (
-          drinks.map((drink, index) => {
+          filteredPosts.map((drink, index) => {
             return (
               <div className="drinkBox" key={drink._id}>
                 <div className="drinkItem">
