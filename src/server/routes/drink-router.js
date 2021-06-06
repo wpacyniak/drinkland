@@ -59,7 +59,7 @@ drinkRoutes.route("/ingredients/:id").get(function (req, res) {
     });
 });
 
-//TODO:Insert ingredient
+//Insert ingredient
 drinkRoutes.route("/:id/addIngredient").post(function (req, res) {
   let db_connect = db.getDb("drinkland");
   let item = {
